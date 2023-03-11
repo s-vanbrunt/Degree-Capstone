@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="636.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReportsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="299.0" layoutX="45.0" layoutY="273.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <HBox layoutX="44.0" layoutY="61.0" prefHeight="186.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="180.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Label layoutX="31.0" layoutY="14.0" text="Count by Type and Month" />
+                  <Button layoutX="74.0" layoutY="147.0" mnemonicParsing="false" onAction="#report1ButtonAction" text="Display" />
+                  <ComboBox fx:id="report1MonthCombo" layoutX="25.0" layoutY="54.0" onAction="#report1MonthComboAction" prefWidth="150.0" promptText="Select a Month" />
+                  <ComboBox fx:id="report1TypeCombo" layoutX="25.0" layoutY="103.0" onAction="#report1TypeComboAction" prefWidth="150.0" promptText="Select a Type" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="180.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Label layoutX="54.0" layoutY="14.0" text="Contact Schedule" />
+                  <Button layoutX="74.0" layoutY="147.0" mnemonicParsing="false" onAction="#report2ButtonAction" text="Display" />
+                  <ComboBox fx:id="report2Combo" layoutX="25.0" layoutY="81.0" onAction="#report2ComboAction" prefWidth="150.0" promptText="Select a Contact" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="180.0" layoutX="1.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Label layoutX="45.0" layoutY="14.0" text="Appointments Today" />
+                  <Button layoutX="75.0" layoutY="147.0" mnemonicParsing="false" onAction="#report3ButtonAction" text="Display" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <Label layoutX="311.0" layoutY="21.0" text="Reports">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="reportsResultLabel" layoutX="50.0" layoutY="276.0" prefHeight="299.0" prefWidth="590.0" />
+      <Label layoutX="325.0" layoutY="253.0" text="Results" />
+      <Button layoutX="312.0" layoutY="589.0" mnemonicParsing="false" onAction="#reportMainMenuButtonAction" text="Main Menu" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SchedulingController">
+   <children>
+      <Pane layoutX="1273.0" layoutY="39.0" prefHeight="488.0" prefWidth="313.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="495.0" layoutX="-4.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="320.0" />
+            <Label fx:id="apptAddApptLabel" alignment="CENTER" layoutX="59.0" layoutY="14.0" prefHeight="27.0" prefWidth="195.0" text="Add Appointment">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="7.0" layoutY="54.0" prefHeight="381.0" prefWidth="297.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="197.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Appt ID:" />
+                  <Label text="Title:" GridPane.rowIndex="1" />
+                  <Label text="Description:" GridPane.rowIndex="2" />
+                  <Label text="Location:" GridPane.rowIndex="3" />
+                  <Label text="Contact:" GridPane.rowIndex="4" />
+                  <Label text="Type:" GridPane.rowIndex="5" />
+                  <Label text="Date:" GridPane.rowIndex="6" />
+                  <Label text="Start Time:" GridPane.rowIndex="7" />
+                  <Label text="End Time:" GridPane.rowIndex="8" />
+                  <Label text="Customer ID:" GridPane.rowIndex="9" />
+                  <Label text="User ID:" GridPane.rowIndex="10" />
+                  <TextField fx:id="apptIdText" disable="true" GridPane.columnIndex="1" />
+                  <TextField fx:id="apptTitleText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="apptDescText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="apptLocText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="apptContactCombo" prefHeight="25.0" prefWidth="202.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="apptTypeText" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="apptCustIdCombo" prefHeight="25.0" prefWidth="198.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <ComboBox fx:id="apptUserIdCombo" prefHeight="25.0" prefWidth="203.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <ComboBox fx:id="apptEndTimeCombo" prefHeight="25.0" prefWidth="199.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="apptStartTimeCombo" prefHeight="25.0" prefWidth="202.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <DatePicker fx:id="apptDatePicker" prefHeight="25.0" prefWidth="203.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <Button fx:id="apptClearButton" disable="true" layoutX="14.0" layoutY="449.0" mnemonicParsing="false" onAction="#apptClearButtonAction" opacity="0.0" text="Cancel Modify" />
+            <Button fx:id="apptAddButton" layoutX="131.0" layoutY="449.0" mnemonicParsing="false" onAction="#apptAddButtonAction" text="Add" />
+         </children>
+      </Pane>
+      <TableView fx:id="apptTable" layoutX="14.0" layoutY="78.0" prefHeight="414.0" prefWidth="1244.0">
+        <columns>
+          <TableColumn fx:id="apptIdCol" prefWidth="36.0" text="ID" />
+          <TableColumn fx:id="apptTitleCol" prefWidth="122.0" text="Title" />
+            <TableColumn fx:id="apptDescCol" prefWidth="180.0" text="Description" />
+            <TableColumn fx:id="apptLocCol" prefWidth="156.0" text="Location" />
+            <TableColumn fx:id="apptContactCol" prefWidth="161.0" text="Contact" />
+            <TableColumn fx:id="apptTypeCol" prefWidth="126.0" text="Type" />
+            <TableColumn fx:id="apptStartDate" prefWidth="68.0" text="Start Date" />
+            <TableColumn fx:id="apptStartTime" prefWidth="86.0" text="Start Time" />
+            <TableColumn fx:id="apptEndDate" prefWidth="84.0" text="End Date" />
+            <TableColumn fx:id="apptEndTime" prefWidth="102.0" text="End Time" />
+            <TableColumn fx:id="apptCustId" prefWidth="63.0" text="Cust ID" />
+            <TableColumn fx:id="apptUserId" prefWidth="59.0" text="User ID" />
+        </columns>
+      </TableView>
+      <Label layoutX="575.0" layoutY="26.0" text="Appointments">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="apptErrorLabel" layoutX="355.0" layoutY="497.0" prefHeight="87.0" prefWidth="563.0" />
+      <Button layoutX="1144.0" layoutY="515.0" mnemonicParsing="false" onAction="#apptDetailsButtonAction" text="Details/Modify &gt;&gt;" />
+      <Button layoutX="994.0" layoutY="515.0" mnemonicParsing="false" onAction="#apptDeleteButtonAction" text="Delete Selected" />
+      <Button layoutX="1488.0" layoutY="547.0" mnemonicParsing="false" onAction="#apptMainMenuButtonAction" text="Main Menu" />
+      <RadioButton layoutX="847.0" layoutY="45.0" mnemonicParsing="false" onAction="#apptRadioAll" selected="true" text="Show All">
+         <toggleGroup>
+            <ToggleGroup fx:id="apptToggles" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="936.0" layoutY="45.0" mnemonicParsing="false" onAction="#apptRadioMonth" text="This Month" toggleGroup="$apptToggles" />
+      <RadioButton layoutX="1044.0" layoutY="45.0" mnemonicParsing="false" onAction="#apptRadioWeek" text="This Week" toggleGroup="$apptToggles" />
+   </children>
+</AnchorPane>
